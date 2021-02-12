@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
+<suite name="Suite Teste" parallel="tests" thread-count="20" group-by-instances="true">
+
+	<test name="Chrome">
+		<classes>
+			<class name="teste.TestCastroUsuario" />
+			<class name="teste.TestLoguin" />
+			<class name="teste.TestFuncionario" />
+		</classes>
+	</test>
+</suite>
