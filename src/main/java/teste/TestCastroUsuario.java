@@ -26,7 +26,7 @@ public class TestCastroUsuario {
 	@Test
 	public void realizaCadastro() {
 		cad.acessaCadastro();
-		cad.insereUsuario("Usuario123");
+		cad.insereUsuario("Usuario5");
 		cad.insereSenha("1234");
 		cad.confirmaSenha("1234");
 	    cad.confirmaCadastro();

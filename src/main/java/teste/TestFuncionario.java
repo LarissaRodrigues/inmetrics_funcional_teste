@@ -54,7 +54,7 @@ public class TestFuncionario {
 	
 	@Test
 	public void excluiFuncionario() {
-		fun.pesquisaFuncionario("Charles");
+		fun.pesquisaFuncionario("Teste");
 		fun.selecionaExcluir();
 		fun.verificaExclusao();
 	}

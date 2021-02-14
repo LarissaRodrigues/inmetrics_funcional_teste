@@ -12,16 +12,20 @@ public class TestLogin {
 
 	WebDriver driver;
 	HlpLogin log;
+	HlpCadastroUsuario cadastro;
 	
 	@BeforeClass
 	public void setUp() {
 		driver = new Driver().inicializa();
 		log = new HlpLogin(driver);
+		cadastro = new HlpCadastroUsuario(driver);
+		cadastro.realizaCadastro();
+
 	}
 	
 	@Test
 	public void realizaLogin() {
-		log.insereUsuario("Usuario123");
+		log.insereUsuario("Usuario5");
 		log.insereSenha("1234");
 		log.selecionaEntrar();
 	}

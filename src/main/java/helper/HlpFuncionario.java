@@ -5,88 +5,91 @@ import static org.testng.Assert.assertEquals;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 
+import page.PageCadastraFuncionario;
+
 public class HlpFuncionario {
 
-	WebDriver driver;
+	PageCadastraFuncionario fun;
 	
 	public HlpFuncionario(WebDriver driver) {
-		this.driver = driver;
+		fun = new PageCadastraFuncionario(driver);
 	}
 	
    public void selecionaCadastroFuncionario() {
-	   driver.findElement(By.xpath("//a[contains(text(),'Novo Funcionário')]")).click();
+	   fun.selecionaCadastro.click();
    }
 	
 	public void insereNome(String nome) {
-		driver.findElement(By.id("inputNome")).sendKeys(nome);
+		fun.insereNome.sendKeys(nome);
 	}
 	
 	public void insereCPF(String cpf) {
-		driver.findElement(By.id("cpf")).sendKeys(cpf);
+		fun.insereCPF.sendKeys(cpf);
 	}
 	
 	public void selecionaSexo() {
-		driver.findElement(By.id("slctSexo")).click();
-		driver.findElement(By.xpath("//option[contains(text(),'Feminino')]")).click();
+		fun.selecionaSexo.click();
+		fun.escolheSexo.click();
 	}
 	
 	public void insereAdmissao(String data) {
-		driver.findElement(By.id("inputAdmissao")).sendKeys(data);
+		fun.insereAdmissao.sendKeys(data);
 	}
 	
 	public void insereCargo(String cargo) {
-		driver.findElement(By.id("inputCargo")).sendKeys(cargo);
+		fun.insereCargo.sendKeys(cargo);
 	}
 	
 	public void insereSalario(String salario) {
-		driver.findElement(By.id("dinheiro")).sendKeys(salario);
+		fun.insereSalario.sendKeys(salario);
 	}
 	
 	public void selecionaContratacao() {
-		driver.findElement(By.id("clt")).click();
+		fun.selecionaFormaContratacao.click();
 	}
 	
 	public void enviaCadastro() {
-		driver.findElement(By.xpath("//body/div[1]/div[2]/div[1]/form[1]/div[3]/input[1]")).click();
-	}//body/div[1]/div[1]/div[1]/form[1]/div[3]/input[1]
+		fun.enviaCadatro.click();
+	}
 	
 	public void verificaCadastro() {
-		String cadastro = driver.findElement(By.xpath("//body/div[1]/div[1]/div[1]")).getText();
+		String cadastro = fun.verificaCadastroSucesso.getText();
 		assertEquals(cadastro, "SUCESSO! Usuário cadastrado com sucesso\n"
 				+ "×");
 	}
 	
 	public void pesquisaFuncionario(String funcionario) {
-		driver.findElement(By.xpath("//body/div[1]/div[2]/div[1]/div[2]/label[1]/input[1]")).sendKeys(funcionario);
+		fun.pesquisaFuncionario.sendKeys(funcionario);
 	}
 	
 	public void selecionaEditar() {
-		driver.findElement(By.xpath("//tbody/tr[1]/td[6]/a[2]/button[1]/span[1]")).click();
+		fun.selecionaEditar.click();
 	}
 	
 	public void limpaCampoSalario() {
-		driver.findElement(By.id("dinheiro")).clear();
+		fun.insereSalario.clear();
 	}
 	
 	public void enviaEdicao() {
-		driver.findElement(By.xpath("//body/div[1]/div[1]/div[1]/form[1]/div[3]/input[1]")).click();
+		fun.BTN_enviaEdicao.click();
 	}
 	
 	public void verificaEdicao() {
-		String edicao = driver.findElement(By.xpath("//body/div[1]/div[1]/div[1]")).getText();
+		String edicao = fun.verificaCampoEditado.getText();
 		assertEquals(edicao, "SUCESSO! Informações atualizadas com sucesso\n"
 				+ "×");
 	}
 	
 	public void selecionaExcluir() {
-		driver.findElement(By.xpath("//tbody/tr[1]/td[6]/a[1]/button[1]/span[1]")).click();
+		fun.BTN_excluir.click();
 	}
 	
 	public void verificaExclusao() {
-		String exclui = driver.findElement(By.xpath("//body/div[1]/div[1]/div[1]")).getText();
+		String exclui = fun.verificaExclusao.getText();
 		System.out.println(exclui);
 		assertEquals(exclui, "SUCESSO! Funcionário removido com sucesso\n"
 				+ "×");
 	}
+	
 	
 }
