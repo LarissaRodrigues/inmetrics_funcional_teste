@@ -6,8 +6,9 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 
 import page.PageCadastraFuncionario;
+import suporte.Suporte;
 
-public class HlpFuncionario {
+public class HlpFuncionario extends Suporte{
 
 	PageCadastraFuncionario fun;
 	
@@ -16,79 +17,72 @@ public class HlpFuncionario {
 	}
 	
    public void selecionaCadastroFuncionario() {
-	   fun.selecionaCadastro.click();
+	   clicar(fun.selecionaCadastro);
    }
 	
 	public void insereNome(String nome) {
-		fun.insereNome.sendKeys(nome);
+		preencherCampo(fun.insereNome, nome);
 	}
 	
 	public void insereCPF(String cpf) {
-		fun.insereCPF.sendKeys(cpf);
+		preencherCampo(fun.insereCPF, cpf);
 	}
 	
 	public void selecionaSexo() {
-		fun.selecionaSexo.click();
-		fun.escolheSexo.click();
+		clicar(fun.selecionaSexo);
+		clicar(fun.escolheSexo);
 	}
 	
 	public void insereAdmissao(String data) {
-		fun.insereAdmissao.sendKeys(data);
+		preencherCampo(fun.insereAdmissao, data);
 	}
 	
 	public void insereCargo(String cargo) {
-		fun.insereCargo.sendKeys(cargo);
+		preencherCampo(fun.insereCargo, cargo);
 	}
 	
 	public void insereSalario(String salario) {
-		fun.insereSalario.sendKeys(salario);
+		preencherCampo(fun.insereSalario, salario);
 	}
 	
 	public void selecionaContratacao() {
-		fun.selecionaFormaContratacao.click();
+		clicar(fun.selecionaFormaContratacao);
 	}
 	
 	public void enviaCadastro() {
-		fun.enviaCadatro.click();
+		clicar(fun.enviaCadastro);
 	}
 	
 	public void verificaCadastro() {
-		String cadastro = fun.verificaCadastroSucesso.getText();
-		assertEquals(cadastro, "SUCESSO! Usuário cadastrado com sucesso\n"
-				+ "×");
+		pontoDeVerificacao(fun.verificaCadastroSucesso, "SUCESSO! Usuário cadastrado com sucesso\n" + "×");
 	}
 	
 	public void pesquisaFuncionario(String funcionario) {
-		fun.pesquisaFuncionario.sendKeys(funcionario);
+		preencherCampo(fun.pesquisaFuncionario, funcionario);
 	}
 	
 	public void selecionaEditar() {
-		fun.selecionaEditar.click();
+		clicar(fun.selecionaEditar);
 	}
 	
 	public void limpaCampoSalario() {
-		fun.insereSalario.clear();
+		limparCampo(fun.insereSalario);
 	}
 	
 	public void enviaEdicao() {
-		fun.BTN_enviaEdicao.click();
+		clicar(fun.btn_enviaEdicao);
 	}
 	
 	public void verificaEdicao() {
-		String edicao = fun.verificaCampoEditado.getText();
-		assertEquals(edicao, "SUCESSO! Informações atualizadas com sucesso\n"
-				+ "×");
+		pontoDeVerificacao(fun.verificaCampoEditado, "SUCESSO! Informações atualizadas com sucesso\n" + "×");
 	}
 	
 	public void selecionaExcluir() {
-		fun.BTN_excluir.click();
+		clicar(fun.btn_excluir);
 	}
 	
 	public void verificaExclusao() {
-		String exclui = fun.verificaExclusao.getText();
-		System.out.println(exclui);
-		assertEquals(exclui, "SUCESSO! Funcionário removido com sucesso\n"
-				+ "×");
+		pontoDeVerificacao(fun.verificaExclusao, "SUCESSO! Funcionário removido com sucesso\n" + "×");
 	}
 	
 	

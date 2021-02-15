@@ -39,7 +39,7 @@ public class PageCadastraFuncionario {
 	public WebElement selecionaFormaContratacao;
 	
 	@FindBy(xpath = "//body/div[1]/div[2]/div[1]/form[1]/div[3]/input[1]")
-	public WebElement enviaCadatro;
+	public WebElement enviaCadastro;
 	
 	@FindBy(xpath = "//body/div[1]/div[1]/div[1]")
 	public WebElement verificaCadastroSucesso;
@@ -51,13 +51,13 @@ public class PageCadastraFuncionario {
 	public WebElement selecionaEditar;
 
 	@FindBy(xpath = "//body/div[1]/div[1]/div[1]/form[1]/div[3]/input[1]")
-	public WebElement BTN_enviaEdicao;
+	public WebElement btn_enviaEdicao;
 	
 	@FindBy(xpath = "//body/div[1]/div[1]/div[1]")
 	public WebElement verificaCampoEditado;
 	
 	@FindBy(xpath = "//tbody/tr[1]/td[6]/a[1]/button[1]/span[1]")
-	public WebElement BTN_excluir;
+	public WebElement btn_excluir;
 	
 	@FindBy(xpath = "//body/div[1]/div[1]/div[1]")
 	public WebElement verificaExclusao;

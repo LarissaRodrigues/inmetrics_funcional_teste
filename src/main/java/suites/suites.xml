@@ -4,8 +4,8 @@
 
 	<test name="Chrome">
 		<classes>
-			<class name="teste.TestCastroUsuario" />
-			<class name="teste.TestLoguin" />
+			<class name="teste.TestCadastroUsuario" />
+			<class name="teste.TestLogin" />
 			<class name="teste.TestFuncionario" />
 		</classes>
 	</test>

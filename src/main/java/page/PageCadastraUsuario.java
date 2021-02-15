@@ -9,21 +9,21 @@ public class PageCadastraUsuario {
 	public PageCadastraUsuario(WebDriver driver) {
 		PageFactory.initElements(driver, this);
 	}
-	
-	@FindBy(xpath = "//body/div[1]/div[2]/div[1]/form[1]/div[7]/a[1]")
+
+	@FindBy(xpath = "//a[contains(text(),'Cadastre-se')]")
 	public WebElement acessarCadastro;
 	
-	@FindBy(xpath = "//body/div[1]/div[1]/div[1]/form[1]/div[2]/input[1]")
+	@FindBy(name =  "username")
 	public WebElement insereUsuario;
 	
-	@FindBy(xpath = "//body/div[1]/div[1]/div[1]/form[1]/div[4]/input[1]")
+	@FindBy(name =  "pass")
 	public WebElement insereSenha;
 	
-	@FindBy(xpath = "//body/div[1]/div[1]/div[1]/form[1]/div[6]/input[1]")
+	@FindBy(name = "confirmpass")
 	public WebElement confirmaSenha;
 	
 	@FindBy(xpath = "//button[contains(text(),'Cadastrar')]")
-	public WebElement BTN_cadastro;
+	public WebElement btn_cadastro;
 	
 	@FindBy(xpath = "//div[contains(text(),'Senhas não combinam')]")
 	public WebElement verificaSenha;

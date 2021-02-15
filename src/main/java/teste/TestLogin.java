@@ -1,6 +1,7 @@
 package teste;
 
 import org.openqa.selenium.WebDriver;
+import org.testng.annotations.AfterClass;
 import org.testng.annotations.BeforeClass;
 import org.testng.annotations.Test;
 
@@ -19,7 +20,7 @@ public class TestLogin {
 		driver = new Driver().inicializa();
 		log = new HlpLogin(driver);
 		cadastro = new HlpCadastroUsuario(driver);
-		cadastro.realizaCadastro();
+	//	cadastro.realizaCadastro();
 
 	}
 	
@@ -38,6 +39,8 @@ public class TestLogin {
 		log.verificaLogin();
 	}
 	
-	
-	
+	@AfterClass
+	public void quit() {
+		driver.quit();
+	}	
 }

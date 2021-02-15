@@ -1,6 +1,7 @@
 package teste;
 
 import org.openqa.selenium.WebDriver;
+import org.testng.annotations.AfterClass;
 import org.testng.annotations.BeforeClass;
 import org.testng.annotations.Test;
 
@@ -44,7 +45,7 @@ public class TestFuncionario {
 	
 	@Test
 	public void editarFuncionario() {
-		fun.pesquisaFuncionario("Candy");
+		fun.pesquisaFuncionario("Teste");
 	    fun.selecionaEditar();
 	    fun.limpaCampoSalario();
 	    fun.insereSalario("200000");
@@ -59,7 +60,8 @@ public class TestFuncionario {
 		fun.verificaExclusao();
 	}
 	
-	
-	
-	
+	@AfterClass
+	public void quit() {
+		driver.quit();
+	}
 }

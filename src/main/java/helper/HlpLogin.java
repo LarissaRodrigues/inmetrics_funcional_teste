@@ -8,8 +8,9 @@ import org.openqa.selenium.WebDriver;
 import com.sun.org.apache.xerces.internal.impl.xpath.XPath;
 
 import page.PageLogin;
+import suporte.Suporte;
 
-public class HlpLogin {
+public class HlpLogin extends Suporte{
 
 	 PageLogin page;
 
@@ -18,22 +19,20 @@ public class HlpLogin {
 	}
 	 
 	 public void insereUsuario(String usuario) {
-		 page.usuario.sendKeys(usuario);
+		 preencherCampo(page.usuario, usuario);
 	 }
 	 
 	 public void insereSenha(String senha) {
-		page.senha.sendKeys(senha);
+		 preencherCampo(page.senha,senha );
 	 }
 	 
 	 public void selecionaEntrar() {
-		 page.BTN_entrar.click();
+		 clicar(page.btn_entrar);
 	 }
 	 
-	 public void verificaLogin() {
-		 String login = page.erroLogin.getText();
-		 System.out.println(login);
-		 assertEquals(login, "ERRO! Usuário ou Senha inválidos\n"
-		 		+ "×");
+	 public void verificaLogin() { 
+		 pontoDeVerificacao(page.erroLogin, "ERRO! Usuário ou Senha inválidos\n"
+			 		+ "×");
 	 }
 	 
 	public void realizaLoguin() {

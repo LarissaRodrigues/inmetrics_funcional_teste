@@ -1,18 +1,16 @@
 package teste;
 
-import java.io.File;
-
-import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.chrome.ChromeDriver;
+import org.testng.annotations.AfterClass;
 import org.testng.annotations.BeforeClass;
-import org.testng.annotations.BeforeTest;
+import org.testng.annotations.Ignore;
 import org.testng.annotations.Test;
+
 import core.Driver;
 import helper.HlpCadastroUsuario;
 
 
-public class TestCastroUsuario {
+public class TestCadastroUsuario {
 
 	WebDriver driver;
 	HlpCadastroUsuario cad;
@@ -26,7 +24,7 @@ public class TestCastroUsuario {
 	@Test
 	public void realizaCadastro() {
 		cad.acessaCadastro();
-		cad.insereUsuario("Usuario5");
+		cad.insereUsuario("Usuario9611");
 		cad.insereSenha("1234");
 		cad.confirmaSenha("1234");
 	    cad.confirmaCadastro();
@@ -35,11 +33,16 @@ public class TestCastroUsuario {
 	@Test
 	public void senhasDiferentes() {
 		cad.acessaCadastro();
-		cad.insereUsuario("Usuario1234");
+		cad.insereUsuario("Usuario123");
 		cad.insereSenha("1234");
 		cad.confirmaSenha("12345");
 	    cad.confirmaCadastro();
 	    cad.verificaSenhasDiferentes();
+	}
+	
+	@AfterClass
+	public void quit() {
+		driver.quit();
 	}
 	
 }

@@ -11,14 +11,14 @@ public class PageLogin  {
 		PageFactory.initElements(driver, this);
 	}
 
-	@FindBy(xpath = "//body/div[1]/div[2]/div[1]/form[1]/div[3]/input[1]")
+	@FindBy(name =  "username")
 	public WebElement usuario;
 	
-	@FindBy(xpath = "//body/div[1]/div[2]/div[1]/form[1]/div[5]/input[1]")
+	@FindBy(name = "pass")
 	public WebElement senha;
 	
 	@FindBy(xpath = "//button[contains(text(),'Entre')]")
-	public WebElement BTN_entrar;
+	public WebElement btn_entrar;
 	
 	@FindBy(xpath = "//body/div[1]/div[1]/div[1]")
 	public WebElement erroLogin;
